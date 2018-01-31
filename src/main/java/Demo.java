@@ -1,15 +1,17 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Demo {
 
-    //static Fibbonaci fibbonaci = new Fibbonaci();
-    public static void main(String[] arg) {
-        Fibbonaci fibbonaci = new Fibbonaci();
-        fibbonaci.setN(10);
-        System.out.println("for" + fibbonaci.countFibbonaci(fibbonaci.getN()));
+    static PrimesFinder primesFinder = new PrimesFinder();
+    static Fibbonaci fibbonaci = new Fibbonaci(primesFinder);
 
-        System.out.println(fibbonaci.countFibbonaciInRange(fibbonaci.getN()));
+
+    public static void main(String[] arg) {
+        // fibbonaci = new Fibbonaci(primesFinder);
+        fibbonaci.setN(100);
+        fibbonaci.countFibonacciUpToNumber(fibbonaci.getN());
+
+        fibbonaci.printResults();
+        System.out.println("------------");
+        fibbonaci.printPrimes();
     }
 
 
